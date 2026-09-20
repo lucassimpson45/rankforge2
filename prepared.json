@@ -1,0 +1,22 @@
+{
+  "1": {
+    "file": "work/slot1.mp4",
+    "duration": 7
+  },
+  "2": {
+    "file": "work/slot2.mp4",
+    "duration": 7
+  },
+  "3": {
+    "file": "work/slot3.mp4",
+    "duration": 7
+  },
+  "4": {
+    "file": "work/slot4.mp4",
+    "duration": 7
+  },
+  "5": {
+    "file": "work/slot5.mp4",
+    "duration": 7
+  }
+}

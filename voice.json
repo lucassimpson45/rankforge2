@@ -1,0 +1,17 @@
+{
+  "watch this": {
+    "file": "assets/voice/zfWx5IjUaWGWTId9hv9t/watch-this.x1.60.wav",
+    "duration": 0.687,
+    "tempo": 1.6
+  },
+  "what the fuck": {
+    "file": "assets/voice/zfWx5IjUaWGWTId9hv9t/what-the-fuck.x1.25.wav",
+    "duration": 1.386,
+    "tempo": 1.25
+  },
+  "number 1 is insane": {
+    "file": "assets/voice/zfWx5IjUaWGWTId9hv9t/number-1-is-insane.x1.25.wav",
+    "duration": 1.542,
+    "tempo": 1.25
+  }
+}

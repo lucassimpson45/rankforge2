@@ -1,0 +1,8 @@
+node_modules/
+work/
+output/
+assets/cookies/*.txt
+.DS_Store
+.env
+!work/.gitkeep
+__pycache__/

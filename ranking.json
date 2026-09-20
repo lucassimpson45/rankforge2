@@ -1,0 +1,103 @@
+{
+  "title": {
+    "prefix": "Ranking Best",
+    "keyword": "INSTANT KARMA",
+    "suffix": "Moments",
+    "keywordColor": "#FF3B30"
+  },
+  "watermark": "@goatedrank",
+  "fps": 30,
+  "revealOrder": [
+    5,
+    4,
+    3,
+    2,
+    1
+  ],
+  "cutAfterLastReveal": true,
+  "sfx": {
+    "reveal": "ding",
+    "cut": [
+      "whoosh",
+      "impact"
+    ],
+    "intro": {
+      "sfx": "riser",
+      "leadIn": 2.6
+    },
+    "hits": [
+      {
+        "slot": 4,
+        "at": 5.0,
+        "sfx": "fahh"
+      },
+      {
+        "slot": 3,
+        "at": 2.4,
+        "sfx": "vine-boom"
+      },
+      {
+        "slot": 2,
+        "at": 5.0,
+        "sfx": "fahh"
+      },
+      {
+        "slot": 1,
+        "at": 3.3,
+        "sfx": "vine-boom"
+      }
+    ]
+  },
+  "slots": {
+    "5": {
+      "clip": "work/clip3.mp4",
+      "in": 1.7,
+      "out": 8.7,
+      "label": "Pizza Prank",
+      "emoji": "🍕",
+      "zoom": 1.2,
+      "anchor": 0.5,
+      "why": "Escalator pizza-box prank — the mildest of the five, opens the list; TikTok watermark cropped"
+    },
+    "4": {
+      "clip": "work/clip4.mp4",
+      "in": 3.4,
+      "out": 10.4,
+      "label": "Tree Tackle",
+      "emoji": "🚲",
+      "zoom": 1.15,
+      "anchor": 1.0,
+      "why": "BMX guy goes at a tree, flips and eats grass (~4.2 s), camera tumbles with him; 'Follow me' caption cropped; fahh on the landing"
+    },
+    "3": {
+      "clip": "work/clip5.mp4",
+      "in": 0.0,
+      "out": 7.0,
+      "label": "Kick Backfire",
+      "emoji": "🦵",
+      "zoom": 1.35,
+      "anchor": 0.5,
+      "why": "Guy in blue kicks a stranger on the street and gets dropped on the pavement two seconds later (~2.5 s); compilation branding + creator handle cropped; vine boom on the drop"
+    },
+    "2": {
+      "clip": "work/clip1.mp4",
+      "in": 1.6,
+      "out": 8.6,
+      "label": "Pond Payback",
+      "emoji": "🦢",
+      "zoom": 1.1,
+      "anchor": 0.5,
+      "why": "Guy gets grabbed from behind and thrown into the goose pond, splash at ~6.7 s — the punchline; fahh on the splash"
+    },
+    "1": {
+      "clip": "work/clip2.mp4",
+      "in": 5.9,
+      "out": 12.9,
+      "label": "Track Shove",
+      "emoji": "🏃",
+      "zoom": 1.1,
+      "anchor": 0.0,
+      "why": "Runner shoves a rival mid-race and immediately face-plants (~9.2 s) — the one people will argue about; 'INSTANT KARMA' bar at the bottom cropped; vine boom on the fall"
+    }
+  }
+}

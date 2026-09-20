@@ -1,0 +1,28 @@
+{
+  "name": "rankforge2",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "ingest": "node pipeline/ingest.mjs",
+    "detect": "python3 pipeline/detect.py --window 7 --top 3",
+    "studio": "remotion studio",
+    "render": "node pipeline/render.mjs output/ranking.mp4",
+    "verify": "node pipeline/verify.mjs output/ranking.mp4",
+    "clean": "rm -rf work/raw work/sheets work/tmp work/*.mp4 && echo 'work/ clips removed'",
+    "finish": "npm run render && npm run verify && npm run clean"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.524",
+    "@remotion/fonts": "^4.0.524",
+    "@remotion/media": "^4.0.524",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "remotion": "^4.0.524"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^7.0.2"
+  }
+}
