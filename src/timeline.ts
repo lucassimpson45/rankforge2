@@ -27,6 +27,7 @@ export type SfxHit = { slot: number; at: number; sfx: string }; // `at` = second
 
 export type SfxConfig = {
   reveal?: string; // sound on every label pop (default "click")
+  opener?: string; // extra sound at frame 0, together with the first reveal (e.g. "i-got-this")
   cut?: string[]; // sounds layered on every cut (default ["whoosh", "impact"])
   intro?: { sfx: string; leadIn: number }; // plays so it ENDS at the first cut, e.g. a riser
   hits?: SfxHit[]; // one-off sounds at a moment inside a slot (the karma landing, the scream)

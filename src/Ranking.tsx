@@ -28,6 +28,7 @@ const SFX_LIB: Record<string, { file: string; gain: number }> = {
   fahh: { file: "assets/sfx/fahh.wav", gain: 1.1 }, // -3.8 dB
   "vine-boom": { file: "assets/sfx/vine-boom.wav", gain: 0.9 }, // 0 dB
   riser: { file: "assets/sfx/riser.wav", gain: 4.0 }, // -16 dB, ends at the first cut
+  "i-got-this": { file: "assets/sfx/i-got-this.wav", gain: 0.85 }, // 0 dB meme line, opener test
 };
 const Sfx: React.FC<{ name: string; gain?: number }> = ({ name, gain = 1 }) => {
   const s = SFX_LIB[name];
@@ -324,7 +325,14 @@ export const Ranking: React.FC<{ ranking: RankingT }> = ({ ranking }) => {
       >
         {ranking.watermark}
       </div>
-          {/* intro riser: builds so it lands exactly on the first cut */}
+          {/* opener: an extra sound on frame 0, on top of the first reveal ding (retention A/B) */}
+      {sfxCfg.opener ? (
+        <Sequence from={0} durationInFrames={fps * 3}>
+          <Sfx name={sfxCfg.opener} />
+        </Sequence>
+      ) : null}
+
+      {/* intro riser: builds so it lands exactly on the first cut */}
       {sfxCfg.intro && segments.length > 1 ? (
         <Sequence
           from={Math.max(0, segments[1].from - Math.round(sfxCfg.intro.leadIn * fps))}

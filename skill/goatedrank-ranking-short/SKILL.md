@@ -74,11 +74,12 @@ node --env-file=.env pipeline/voice.mjs
   `--cookies-from-browser chrome` is the authorized fix (Chrome is logged in). Instagram
   needs `assets/cookies/instagram.txt`; if it's missing the ingest fails that item with a
   clear message. Don't substitute a different source.
-- **SFX and fonts come from `assets/sfx` and `assets/fonts` only.** Never download,
-  never synthesize a tone, never reference a file that isn't on disk. Current set:
-  `whoosh.wav`, `impact.wav`, `click.wav`, `ding.wav`, `Anton-Regular.ttf`. If a new
-  sound is wanted, search the disk (`find ~ -iname "*click*.wav"`) and copy; avoid
-  `/System/Library/Sounds` (Apple-licensed).
+- **SFX and fonts come from `assets/sfx` and `assets/fonts` only.** Never synthesize a
+  tone, never reference a file that isn't on disk. The one sanctioned way to add a sound is
+  Lucas handing you a file (drop in `SFX/`) or a specific YouTube link he asks for
+  (`yt-dlp -x --audio-format wav` into `SFX/`, then trim into `assets/sfx/` and add to
+  `SFX_LIB`) — never go hunting for sounds yourself. Avoid `/System/Library/Sounds`
+  (Apple-licensed).
 - **Transformative output.** Our overlay, our ranking, our labels; crop out creator
   captions/watermarks with per-clip `zoom`/`anchor` where possible.
 
@@ -180,6 +181,10 @@ with a `-ss` trim and add them to `SFX_LIB`. Never download or synthesize a soun
             { "slot": 2, "at": 5.7, "sfx": "fahh" } ]
 }
 ```
+
+`"opener": "i-got-this"` plays the "I Got This" meme line on frame 0, on top of the first
+ding. Lucas is A/B-testing it for retention: use it on roughly **every 3rd video**, only
+when he says so (or when he asks "is this an opener one?" — ask if unclear). Off by default.
 
 Lucas's three favourites and where they belong: **ding** on reveals, **vine boom** on the
 heaviest landing (the karma hit, the big splash — read the RMS `peak_t` from
