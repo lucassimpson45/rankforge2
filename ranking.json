@@ -1,28 +1,94 @@
 {
-  "title": { "prefix": "Ranking Best", "keyword": "ROCK SPLASH", "suffix": "Moments", "keywordColor": "#3D8BFF" },
+  "title": {
+    "prefix": "Ranking Funniest",
+    "keyword": "WATER PARK",
+    "suffix": "Moments",
+    "keywordColor": "#3D8BFF"
+  },
   "watermark": "@goatedrank",
   "fps": 30,
-  "revealOrder": [5, 4, 3, 2],
+  "revealOrder": [
+    5,
+    4,
+    3,
+    2,
+    1
+  ],
   "cutAfterLastReveal": true,
-  "durationRange": [15, 38],
-  "durationNote": "Two links only: 5.3 / 5.3 / 5.1 / 3.1 s of usable footage. Bare #1 bait, hard cut after slot 2.",
   "sfx": {
     "hits": [
-      { "slot": 4, "at": 4.2, "sfx": "fahh" },
-      { "slot": 3, "at": 2.3, "sfx": "vine-boom" },
-      { "slot": 2, "at": 2.2, "sfx": "vine-boom" }
+      {
+        "slot": 4,
+        "at": 6.1,
+        "sfx": "fahh"
+      },
+      {
+        "slot": 3,
+        "at": 5.0,
+        "sfx": "fahh"
+      },
+      {
+        "slot": 2,
+        "at": 4.2,
+        "sfx": "vine-boom"
+      },
+      {
+        "slot": 1,
+        "at": 5.5,
+        "sfx": "vine-boom"
+      }
     ]
   },
   "slots": {
-    "5": { "clip": "work/clip2.mp4", "in": 0.0,  "out": 5.3,   "label": "Slope Tumble",     "emoji": "🪨", "zoom": 1.0, "anchor": 0.3,
-           "why": "Big red rock heaved down a rocky slope, dust cloud at ~4.2 s — no water, weakest for the theme, opens" },
-    "4": { "clip": "work/clip2.mp4", "in": 5.4,  "out": 9.9,   "label": "Quarry Plunk",     "emoji": "💧", "zoom": 1.0, "anchor": 0.5,
-           "why": "Aerial: small rock dropped into a quarry pond, tiny splash at ~9.7 s — the anticlimax, fahh on the plunk" },
-    "3": { "clip": "work/clip1.mp4", "in": 0.0,  "out": 5.25,  "label": "Mud Blast",        "emoji": "💥", "zoom": 1.0, "anchor": 0.5,
-           "why": "Boulder shoved off a concrete wall into a brown river, huge muddy eruption at ~2.4 s; vine boom on impact" },
-    "2": { "clip": "work/clip2.mp4", "in": 10.0, "out": 13.06, "label": "Cliff Cannonball", "emoji": "🌊", "zoom": 1.0, "anchor": 0.4,
-           "why": "Rock dropped off a cliff into a lake, tallest splash of the set at ~12.3 s — closes; vine boom on the hit" },
-    "1": { "clip": null, "label": null, "emoji": null,
-           "why": "Never revealed — hard cut after slot 2 so the viewer expects a #1 that never comes" }
+    "5": {
+      "clip": "work/clip1.mp4",
+      "in": 7.65,
+      "out": 14.05,
+      "label": "Tower Jump",
+      "emoji": "🚫",
+      "zoom": 1.15,
+      "anchor": 0.0,
+      "why": "Guy leaps off the slide tower platform into the pool ('he's definitely getting kicked out') — opens; bottom caption cropped"
+    },
+    "4": {
+      "clip": "work/clip1.mp4",
+      "in": 30.5,
+      "out": 37.5,
+      "label": "Wave Pool Slap",
+      "emoji": "🌊",
+      "zoom": 1.25,
+      "anchor": 0.75,
+      "why": "Mustache guy grinning at the camera until the wave folds him at ~36.5 s; top caption cropped; fahh on the hit"
+    },
+    "3": {
+      "clip": "work/clip1.mp4",
+      "in": 48.0,
+      "out": 55.0,
+      "label": "Physics Fail",
+      "emoji": "🎢",
+      "zoom": 1.35,
+      "anchor": 0.75,
+      "why": "Rider flies off the end of the slide and cannonballs the pool (~52–54 s); caption cropped; fahh on the splash"
+    },
+    "2": {
+      "clip": "work/clip1.mp4",
+      "in": 55.1,
+      "out": 61.3,
+      "label": "Drop Slide",
+      "emoji": "😱",
+      "zoom": 1.17,
+      "anchor": 0.0,
+      "why": "Vertical drop slide, rider vanishes then a huge splash at ~59.5 s; anchor 0 crops the mid-low caption (loses the bottom of the splash); vine boom on the splash"
+    },
+    "1": {
+      "clip": "work/clip1.mp4",
+      "in": 0.0,
+      "out": 7.0,
+      "label": "Blob Launch",
+      "emoji": "🚀",
+      "zoom": 1.0,
+      "anchor": 0.5,
+      "why": "'New world record' blob launch — person fired sky-high over the lake, lands ~5.5 s; the argument-starter; caption mid-frame stays; vine boom on the landing"
+    }
   }
 }
