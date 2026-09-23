@@ -1,94 +1,29 @@
 {
-  "title": {
-    "prefix": "Ranking Funniest",
-    "keyword": "BEE REMOVAL",
-    "suffix": "Fails",
-    "keywordColor": "#FFD400"
-  },
+  "title": { "prefix": "Ranking Funniest", "keyword": "TRAMPOLINE", "suffix": "Fails", "keywordColor": "#FFD400" },
   "watermark": "@goatedrank",
   "fps": 30,
-  "revealOrder": [
-    5,
-    4,
-    3,
-    2,
-    1
-  ],
+  "revealOrder": [5, 4, 3, 2, 1],
   "cutAfterLastReveal": true,
+  "durationRange": [20, 38],
+  "durationNote": "Only the clips after 28 s were allowed; the five usable ones run 3.3–5.6 s each, so 28 s is unreachable. Total ~21.5 s.",
   "sfx": {
     "hits": [
-      {
-        "slot": 4,
-        "at": 4.3,
-        "sfx": "fahh"
-      },
-      {
-        "slot": 3,
-        "at": 3.3,
-        "sfx": "vine-boom"
-      },
-      {
-        "slot": 2,
-        "at": 4.0,
-        "sfx": "fahh"
-      },
-      {
-        "slot": 1,
-        "at": 4.2,
-        "sfx": "vine-boom"
-      }
+      { "slot": 4, "at": 3.7, "sfx": "fahh" },
+      { "slot": 3, "at": 2.3, "sfx": "vine-boom" },
+      { "slot": 2, "at": 2.4, "sfx": "fahh" },
+      { "slot": 1, "at": 1.6, "sfx": "vine-boom" }
     ]
   },
   "slots": {
-    "5": {
-      "clip": "work/clip1.mp4",
-      "in": 33.0,
-      "out": 40.0,
-      "label": "Shed Sprint",
-      "emoji": "🏃",
-      "zoom": 1.1,
-      "anchor": 0.5,
-      "why": "Guy sprays a nest inside a shed and bolts across the lawn — mildest, opens the list"
-    },
-    "4": {
-      "clip": "work/clip1.mp4",
-      "in": 9.7,
-      "out": 16.7,
-      "label": "Trash Can Trick",
-      "emoji": "🗑️",
-      "zoom": 1.3,
-      "anchor": 0.0,
-      "why": "Knocks a wasp nest out of a tree into a trash can, then runs (~14 s); bottom caption cropped; fahh on the bolt"
-    },
-    "3": {
-      "clip": "work/clip1.mp4",
-      "in": 40.1,
-      "out": 46.7,
-      "label": "Barn Panic",
-      "emoji": "🐝",
-      "zoom": 1.1,
-      "anchor": 0.5,
-      "why": "Sprays under a red barn rail and gets swarmed, full body-flail at ~43.4 s; vine boom on the flail"
-    },
-    "2": {
-      "clip": "work/clip1.mp4",
-      "in": 46.8,
-      "out": 52.3,
-      "label": "Ladder Bail",
-      "emoji": "🪜",
-      "zoom": 1.15,
-      "anchor": 0.4,
-      "why": "Ladder kicks out from under him mid-spray and he runs off the deck (~50 s); fahh on the fall; 'plan b' caption in the last second stays"
-    },
-    "1": {
-      "clip": "work/clip1.mp4",
-      "in": 0.0,
-      "out": 8.0,
-      "label": "Full Meltdown",
-      "emoji": "😱",
-      "zoom": 1.25,
-      "anchor": 1.0,
-      "why": "'Bee attack' — crew scatters off the deck, one guy slapping himself the whole way (~4.2 s); the argument-starter; top caption cropped; vine boom on the scatter"
-    }
+    "5": { "clip": "work/clip1.mp4", "in": 37.73, "out": 42.13, "label": "Park Faceplant", "emoji": "🤸", "zoom": 1.1,  "anchor": 0.5,
+           "why": "Indoor trampoline park — jumper loses it mid-air and lands flat at ~40.6 s; opens the list" },
+    "4": { "clip": "work/clip1.mp4", "in": 28.0,  "out": 32.17, "label": "Hedge Drop",     "emoji": "🌿", "zoom": 1.1,  "anchor": 0.5,
+           "why": "Long garden trampoline over a hedge; bouncer misjudges and goes down at ~31.7 s; fahh on the drop" },
+    "3": { "clip": "work/clip1.mp4", "in": 32.17, "out": 37.73, "label": "Soaked Slip",    "emoji": "💦", "zoom": 1.1,  "anchor": 0.5,
+           "why": "Water-covered trampoline, kid gets blasted and wiped out at ~34.5 s — loudest moment of the set; vine boom on the hit" },
+    "2": { "clip": "work/clip1.mp4", "in": 45.0,  "out": 49.13, "label": "Slide Wipeout",  "emoji": "🛝", "zoom": 1.1,  "anchor": 0.5,
+           "why": "Big guy rides the inflatable slide onto the trampoline, wipes out and lies there laughing (~47.4 s); fahh on the crash" },
+    "1": { "clip": "work/clip1.mp4", "in": 49.8,  "out": 53.07, "label": "Cow Invasion",   "emoji": "🐄", "zoom": 1.1,  "anchor": 0.5,
+           "why": "A full-grown cow standing on a backyard trampoline — the 'is this real' comment bait; vine boom as it steps" }
   }
 }
