@@ -5,7 +5,7 @@
   "revealOrder": [5, 4, 3, 2, 1],
   "cutAfterLastReveal": true,
   "durationRange": [20, 38],
-  "durationNote": "Single compilation (pawsonthego858), the clips left over from video 1 — each is one continuous 3.75–6.2 s shot between two real cuts",
+  "durationNote": "Single compilation (pawsonthego858), the clips left over from video 1 — each is one continuous 3.75–6 s shot between two real cuts",
   "sfx": {
     "reveal": "ding",
     "cut": ["whoosh", "impact"],
@@ -17,8 +17,8 @@
     ]
   },
   "slots": {
-    "5": { "clip": "work/clip1.mp4", "in": 57.0, "out": 63.2, "label": "Bedroom Dodgeball", "emoji": "🏐", "zoom": 1.15, "anchor": 0.0,
-           "why": "Compilation clip 13 — dodgeball across the bedroom; zoom 1.15 + anchor 0 pushes the 'pro athlete 92.4%' caption off the bottom (it sat on the watermark)" },
+    "5": { "clip": "work/clip1.mp4", "in": 36.35, "out": 41.4, "label": "Mi Bombo", "emoji": "🥥", "zoom": 1.22, "anchor": 1.0,
+           "why": "Lucas's swap (was Bedroom Dodgeball) — compilation clip 9 at 0:37, machete swing at the coconut on the stump ~4.2 s in; one handheld shot; zoom 1.22 + anchor 1 crops the 'MI BOMBO!!! 67.69% Accuracy' caption" },
     "4": { "clip": "work/clip1.mp4", "in": 21.25, "out": 25.75, "label": "Heater Thrown", "emoji": "🔥", "zoom": 1.25, "anchor": 1.0,
            "why": "Compilation clip 6 — run-up throw down the lot, audio hit at 3.6 s; zoom 1.25 + anchor 1 crops 'He threw a heater 💀'" },
     "3": { "clip": "work/clip1.mp4", "in": 53.0, "out": 56.75, "label": "Face Shot", "emoji": "❄️", "zoom": 1.0, "anchor": 0.5,
