@@ -149,16 +149,25 @@ async function download(idx, src, platform) {
 
   // TikTok's web endpoint is flaky on some videos even with valid cookies; the mobile API
   // route (same video, different TikTok endpoint) is the documented second attempt.
-  const routes = [[]];
+  const routes = [{ label: "web", extra: [], url: src }];
   if (platform === "tiktok" && hasAuth) {
-    routes.push(["--extractor-args", "tiktok:api_hostname=api16-normal-c-useast1a.tiktokv.com"]);
+    routes.push({ label: "mobile API", extra: ["--extractor-args", "tiktok:api_hostname=api16-normal-c-useast1a.tiktokv.com"], url: src });
   }
+  // Last resort for TikTok: the public embed player (tiktok.com/embed/v2/<id>). It serves the
+  // same video without a logged-in session, which the web/API routes now demand.
+  const ttId = platform === "tiktok" ? (src.match(/\/video\/(\d+)/) || [])[1] : null;
+  if (ttId) routes.push({ label: "embed", extra: ["--no-playlist"], url: `https://www.tiktok.com/embed/v2/${ttId}` });
+
   let r;
-  for (const extra of routes) {
-    r = await run("yt-dlp", [...extra, ...args]);
-    if (r.code === 0) break;
-    if (extra.length) console.log("  download: web route failed, mobile API route also failed");
-    else if (routes.length > 1) console.log("  download: web route failed, trying mobile API route");
+  for (let i = 0; i < routes.length; i++) {
+    const { label, extra, url } = routes[i];
+    r = await run("yt-dlp", [...extra, ...args.slice(0, -1), url]);
+    if (r.code === 0) {
+      if (i) console.log(`  download: ${label} route worked`);
+      break;
+    }
+    const next = routes[i + 1];
+    console.log(next ? `  download: ${label} route failed, trying ${next.label} route` : `  download: ${label} route failed`);
   }
   if (r.code !== 0) {
     const line = (r.err.match(/^ERROR:.*$/m) || [r.err.trim().split("\n").pop()])[0];
@@ -270,24 +279,42 @@ async function normalize(idx, rawPath, meta) {
     steps.push(`trim ${gain > 0 ? "+" : ""}${gain} dB → ${loud.integrated} LUFS`);
   }
 
-  // --- peak guard: loudnorm's linear mode can overshoot TP, and AAC adds ~0.3 dB; clamp it ---
-  const aacHeadroom = 1.0; // measured: AAC at 192k raised true peak ~0.6 dB on a transient-heavy source
-  if (loud.truePeak > TARGET.tp - aacHeadroom) {
-    const next = aTmp(9);
-    const ceiling = Math.pow(10, (TARGET.tp - aacHeadroom) / 20).toFixed(4);
-    const r = await run("ffmpeg", [...base, "-i", cur, "-af", `alimiter=limit=${ceiling}:attack=3:release=60:level=false`,
-      "-ar", "48000", "-ac", "2", "-c:a", "pcm_s16le", next]);
-    if (r.code !== 0) return { ok: false, error: "peak limiter failed: " + tail(r) };
-    cur = next;
-    loud = await measureLoudness(cur);
-    steps.push(`limiter → ${loud.integrated} LUFS / ${loud.truePeak} dBTP`);
-  }
+  // --- peak guard: loudnorm's linear mode can overshoot TP, and AAC adds ~0.3-1.5 dB depending
+  // on the source's spectral content; clamp on PCM, mux, then re-measure the actual AAC output
+  // and tighten further if it still overshot. Each attempt limits from the pre-guard signal (not
+  // the previous attempt's output) so tightening passes don't compound and drag loudness down.
+  const preGuard = cur;
+  const preGuardLoud = loud;
+  let aacHeadroom = 1.0; // measured: AAC at 192k raised true peak ~0.6 dB on a typical source
+  for (let n = 9; n <= 11; n++) {
+    cur = preGuard;
+    loud = preGuardLoud;
+    if (loud.truePeak > TARGET.tp - aacHeadroom) {
+      const next = aTmp(n);
+      const ceiling = Math.pow(10, (TARGET.tp - aacHeadroom) / 20).toFixed(4);
+      const r = await run("ffmpeg", [...base, "-i", cur, "-af", `alimiter=limit=${ceiling}:attack=3:release=60:level=false`,
+        "-ar", "48000", "-ac", "2", "-c:a", "pcm_s16le", next]);
+      if (r.code !== 0) return { ok: false, error: "peak limiter failed: " + tail(r) };
+      cur = next;
+      loud = await measureLoudness(cur);
+      steps.push(`limiter (headroom ${aacHeadroom.toFixed(1)}) → ${loud.integrated} LUFS / ${loud.truePeak} dBTP`);
+    }
 
-  // --- mux ---
-  const rm = await run("ffmpeg", [...base, "-i", vTmp, "-i", cur, "-map", "0:v:0", "-map", "1:a:0",
-    "-c:v", "copy", ...acodec, "-movflags", "+faststart", out]);
-  if (rm.code !== 0) return { ok: false, error: "mux failed: " + tail(rm) };
-  return { ok: true, path: out, note: steps.join("; ") };
+    // --- mux ---
+    const rm = await run("ffmpeg", [...base, "-i", vTmp, "-i", cur, "-map", "0:v:0", "-map", "1:a:0",
+      "-c:v", "copy", ...acodec, "-movflags", "+faststart", out]);
+    if (rm.code !== 0) return { ok: false, error: "mux failed: " + tail(rm) };
+
+    // AAC encoding can raise true peak beyond what the PCM measurement predicted; check the real file.
+    const outLoud = await measureLoudness(out);
+    if (outLoud.truePeak <= TARGET.tp) {
+      steps.push(`mux → ${outLoud.integrated} LUFS / ${outLoud.truePeak} dBTP (AAC)`);
+      return { ok: true, path: out, note: steps.join("; ") };
+    }
+    steps.push(`mux overshot: ${outLoud.truePeak} dBTP (AAC) > ${TARGET.tp}; tightening`);
+    aacHeadroom += 0.7;
+  }
+  return { ok: false, error: `AAC true peak still over ${TARGET.tp} dBTP after 3 tightening passes: ${steps.join("; ")}` };
 }
 
 

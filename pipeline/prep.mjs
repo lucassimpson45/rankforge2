@@ -19,8 +19,11 @@ for (const n of r.revealOrder) {
   if (!existsSync(src)) { console.error(`[fatal] missing ${s.clip} — run ingest first`); process.exit(1); }
   const dst = join(ROOT, "work", `slot${n}.mp4`);
   const dur = (s.out - s.in).toFixed(3);
+  // optional burned-in watermark removal: [{x,y,w,h}] in source px, per slot or top-level for every slot
+  const boxes = s.delogo ?? r.delogo ?? [];
+  const vf = boxes.length ? ["-vf", boxes.map(b => `delogo=x=${b.x}:y=${b.y}:w=${b.w}:h=${b.h}`).join(",")] : [];
   // -ss before -i + re-encode = frame-accurate cut; libx264 keeps decode cheap for the renderer
-  const p = spawnSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", "-ss", String(s.in), "-i", src, "-t", dur,
+  const p = spawnSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", "-ss", String(s.in), "-i", src, "-t", dur, ...vf,
     "-c:v", "libx264", "-preset", "veryfast", "-crf", "16", "-pix_fmt", "yuv420p", "-g", "30",
     "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-ac", "2", "-movflags", "+faststart", dst], { encoding: "utf8" });
   if (p.status !== 0) { console.error(p.stderr); process.exit(1); }

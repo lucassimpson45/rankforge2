@@ -61,6 +61,15 @@ node --env-file=.env pipeline/voice.mjs
   segment (import `contact_sheet` from `pipeline/detect.py`), and point every slot at the
   same `work/clip1.mp4` with different `in`/`out`. Segments are often shorter than 7 s;
   see Duration below.
+  **Every slot must be one continuous shot** (Lucas, 2026-09-25: "u used two clips") — run
+  scene detection at `gt(scene,0.08)` and keep each window between two real cuts; a camera
+  angle change inside a window counts as two clips.
+- **Burned-in compilation watermark** (e.g. "@SlickClips"): crop it with `anchor` if the
+  payoff survives, otherwise add `"delogo": [{"x","y","w","h"}]` (source px) to
+  `ranking.json` — top-level applies to every slot, per-slot overrides. `prep.mjs` runs
+  ffmpeg `delogo` on the pre-cut. Measure the box on a full-res frame first.
+- **TikTok ingest falling back to the "mobile API" or "embed" route** returns a copy with
+  TikTok's bouncing watermark. Re-run ingest with `--force` until no route message prints.
 - `npm run finish` deletes `work/raw` and `work/*.mp4` at the end. Lucas asked for this
   (laptop storage) — any re-render after that needs the ingest step again (~40 s).
 - `npm run studio` opens Remotion Studio if a layout tweak needs eyeballing live.
