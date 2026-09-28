@@ -107,7 +107,9 @@ Decisions to make, in order:
    hard-cuts after slot 2 so the viewer expects a #1 that never comes. With five links,
    fill all five. Never add an outro.
 4. **Title** — `Ranking Best [KEYWORD] Moments`, keyword in `#FFD400` yellow (red/blue
-   also allowed). Keyword is the thing the clips share ("ROCK DROP").
+   also allowed). Keyword is the thing the clips share ("ROCK DROP"). `keywordColor` also
+   colours the active number. When Lucas says "not yellow" (insane-accuracy, 2026-09-28)
+   use red `#FF3B30` / blue `#2F80FF`, and give each video of a batch its own colour.
 5. **Labels** — 2–3 words + one emoji, all caps in render, punchy nouns ("Quarry Bomb 🌊",
    "Tree Killer 🌳"). The one at the top of the list should be the one most likely to
    start an argument in the comments.
@@ -192,8 +194,10 @@ with a `-ss` trim and add them to `SFX_LIB`. Never download or synthesize a soun
 ```
 
 `"opener": "i-got-this"` plays the "I Got This" meme line on frame 0, on top of the first
-ding. Lucas is A/B-testing it for retention: use it on roughly **every 3rd video**, only
-when he says so (or when he asks "is this an opener one?" — ask if unclear). Off by default.
+ding. Lucas is A/B-testing it for retention. Since 2026-09-28 it's **your call** ("start using
+it SOMETIMES"): put it on roughly every 3rd video without asking — when he asks for a batch,
+give it to one of them, not all — and say in the report which ones have it. Check the last
+couple of commits' `ranking.json` so it doesn't land on back-to-back videos.
 
 Lucas's three favourites and where they belong: **ding** on reveals, **vine boom** on the
 heaviest landing (the karma hit, the big splash — read the RMS `peak_t` from

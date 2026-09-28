@@ -1,32 +1,31 @@
 {
-  "title": { "prefix": "Ranking Best", "keyword": "INSANE ACCURACY", "suffix": "Moments", "keywordColor": "#FF3B30" },
+  "title": { "prefix": "Ranking Best", "keyword": "INSANE ACCURACY", "suffix": "Moments", "keywordColor": "#2F80FF" },
   "watermark": "@goatedrank",
   "fps": 30,
   "revealOrder": [5, 4, 3, 2, 1],
   "cutAfterLastReveal": true,
   "durationRange": [20, 38],
-  "durationNote": "Single compilation (pawsonthego858) — every clip is one continuous 3.4–6 s shot between two real cuts, so the video can't reach 28 s without padding",
+  "durationNote": "Single compilation (pawsonthego858), the clips left over from video 1 — each is one continuous 3.75–6.2 s shot between two real cuts",
   "sfx": {
-    "opener": "i-got-this",
     "reveal": "ding",
     "cut": ["whoosh", "impact"],
     "intro": { "sfx": "riser", "leadIn": 2.6 },
     "hits": [
-      { "slot": 4, "at": 1.8, "sfx": "vine-boom" },
-      { "slot": 3, "at": 2.4, "sfx": "fahh" },
-      { "slot": 1, "at": 1.6, "sfx": "vine-boom" }
+      { "slot": 4, "at": 3.6, "sfx": "vine-boom" },
+      { "slot": 3, "at": 2.8, "sfx": "fahh" },
+      { "slot": 2, "at": 3.6, "sfx": "vine-boom" }
     ]
   },
   "slots": {
-    "5": { "clip": "work/clip1.mp4", "in": 0.03, "out": 3.45, "label": "Street Dime", "emoji": "🎯", "zoom": 1.0, "anchor": 0.5,
-           "why": "Lucas's clip 1 — ball lobbed down the street to the cyclist; whole segment before the cut at 3.47" },
-    "4": { "clip": "work/clip1.mp4", "in": 3.5, "out": 7.65, "label": "Lecture Snipe", "emoji": "📚", "zoom": 1.0, "anchor": 0.5,
-           "why": "Lucas's clip 2 — throw from the back row of the lecture hall to the podium, whip pan to the crowd going up; one handheld shot" },
-    "3": { "clip": "work/clip1.mp4", "in": 16.87, "out": 21.2, "label": "Show Ruined", "emoji": "❄️", "zoom": 1.55, "anchor": 0.26,
-           "why": "Lucas's clip 5 — snowball from the stands onto the performer; zoom 1.55 + anchor 0.26 crops the caption on top and the dark stands below" },
-    "2": { "clip": "work/clip1.mp4", "in": 31.8, "out": 36.28, "label": "Bottle Catch", "emoji": "🍾", "zoom": 1.1, "anchor": 1.0,
-           "why": "Lucas's clip 8 — bottle thrown across the plaza, whip pan to the kid catching it; zoom 1.1 + anchor 1 crops 'That accuracy'" },
-    "1": { "clip": "work/clip1.mp4", "in": 25.8, "out": 31.75, "label": "Wasp Nest", "emoji": "🐝", "zoom": 1.0, "anchor": 0.3,
-           "why": "Lucas's clip 7 — rock nails the nest on the sign, he dives into the van and the wasps swarm the window; one shot (camera already in the van); anchor 0.3 crops the blurred box at the bottom" }
+    "5": { "clip": "work/clip1.mp4", "in": 57.0, "out": 63.2, "label": "Bedroom Dodgeball", "emoji": "🏐", "zoom": 1.15, "anchor": 0.0,
+           "why": "Compilation clip 13 — dodgeball across the bedroom; zoom 1.15 + anchor 0 pushes the 'pro athlete 92.4%' caption off the bottom (it sat on the watermark)" },
+    "4": { "clip": "work/clip1.mp4", "in": 21.25, "out": 25.75, "label": "Heater Thrown", "emoji": "🔥", "zoom": 1.25, "anchor": 1.0,
+           "why": "Compilation clip 6 — run-up throw down the lot, audio hit at 3.6 s; zoom 1.25 + anchor 1 crops 'He threw a heater 💀'" },
+    "3": { "clip": "work/clip1.mp4", "in": 53.0, "out": 56.75, "label": "Face Shot", "emoji": "❄️", "zoom": 1.0, "anchor": 0.5,
+           "why": "Compilation clip 12 — snowball straight into her face from distance, she doubles over; comedic, gets the fahh" },
+    "2": { "clip": "work/clip1.mp4", "in": 7.7, "out": 11.88, "label": "Boat Sniper", "emoji": "🚤", "zoom": 1.0, "anchor": 0.5,
+           "why": "Compilation clip 3 — rock skimmed across the lake onto the RC boat, splash at ~3.6 s; stops before the cut to the celebration shot" },
+    "1": { "clip": "work/clip1.mp4", "in": 41.5, "out": 47.45, "label": "Pipe Trick Shot", "emoji": "🏀", "zoom": 1.22, "anchor": 1.0,
+           "why": "Compilation clip 10 — ball sent round the full pipe while he dives, the cleanest trick shot of the lot; zoom 1.22 + anchor 1 crops the 'I finally did it' captions" }
   }
 }
