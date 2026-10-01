@@ -1,31 +1,34 @@
 {
-  "title": { "prefix": "Ranking Best", "keyword": "INSANE ACCURACY", "suffix": "Moments", "keywordColor": "#2F80FF" },
+  "title": { "prefix": "Ranking Best", "keyword": "MARIO KART", "suffix": "Moments", "keywordColor": "#FF3B30" },
   "watermark": "@goatedrank",
   "fps": 30,
   "revealOrder": [5, 4, 3, 2, 1],
   "cutAfterLastReveal": true,
   "durationRange": [20, 38],
-  "durationNote": "Single compilation (pawsonthego858), the clips left over from video 1 — each is one continuous 3.75–6 s shot between two real cuts",
+  "durationNote": "Single compilation (vavashop_01, real-life luge 'Mario Kart' in Da Lat) — every slot is one continuous 3.2–6.6 s shot between two real cuts",
+  "delogo": [{ "x": 8, "y": 1795, "w": 112, "h": 115 }],
   "sfx": {
     "reveal": "ding",
     "cut": ["whoosh", "impact"],
     "intro": { "sfx": "riser", "leadIn": 2.6 },
+    "opener": "i-got-this",
     "hits": [
-      { "slot": 4, "at": 3.6, "sfx": "vine-boom" },
-      { "slot": 3, "at": 2.8, "sfx": "fahh" },
-      { "slot": 2, "at": 3.6, "sfx": "vine-boom" }
+      { "slot": 4, "at": 2.95, "sfx": "fahh" },
+      { "slot": 3, "at": 1.65, "sfx": "fahh" },
+      { "slot": 2, "at": 1.85, "sfx": "vine-boom" },
+      { "slot": 1, "at": 3.0, "sfx": "vine-boom" }
     ]
   },
   "slots": {
-    "5": { "clip": "work/clip1.mp4", "in": 36.35, "out": 41.4, "label": "Mi Bombo", "emoji": "🥥", "zoom": 1.22, "anchor": 1.0,
-           "why": "Lucas's swap (was Bedroom Dodgeball) — compilation clip 9 at 0:37, machete swing at the coconut on the stump ~4.2 s in; one handheld shot; zoom 1.22 + anchor 1 crops the 'MI BOMBO!!! 67.69% Accuracy' caption" },
-    "4": { "clip": "work/clip1.mp4", "in": 21.25, "out": 25.75, "label": "Heater Thrown", "emoji": "🔥", "zoom": 1.25, "anchor": 1.0,
-           "why": "Compilation clip 6 — run-up throw down the lot, audio hit at 3.6 s; zoom 1.25 + anchor 1 crops 'He threw a heater 💀'" },
-    "3": { "clip": "work/clip1.mp4", "in": 53.0, "out": 56.75, "label": "Face Shot", "emoji": "❄️", "zoom": 1.0, "anchor": 0.5,
-           "why": "Compilation clip 12 — snowball straight into her face from distance, she doubles over; comedic, gets the fahh" },
-    "2": { "clip": "work/clip1.mp4", "in": 7.7, "out": 11.88, "label": "Boat Sniper", "emoji": "🚤", "zoom": 1.0, "anchor": 0.5,
-           "why": "Compilation clip 3 — rock skimmed across the lake onto the RC boat, splash at ~3.6 s; stops before the cut to the celebration shot" },
-    "1": { "clip": "work/clip1.mp4", "in": 41.5, "out": 47.45, "label": "Pipe Trick Shot", "emoji": "🏀", "zoom": 1.22, "anchor": 1.0,
-           "why": "Compilation clip 10 — ball sent round the full pipe while he dives, the cleanest trick shot of the lot; zoom 1.22 + anchor 1 crops the 'I finally did it' captions" }
+    "5": { "clip": "work/clip1.mp4", "in": 44.53, "out": 48.78, "label": "Track Slide", "emoji": "🛝", "zoom": 1.0, "anchor": 1.0,
+           "why": "Compilation clip 13 — rider ahead bails out of the green kart and slides down the track on his back (~3.5 s in); small in frame, weakest payoff, opens the list" },
+    "4": { "clip": "work/clip1.mp4", "in": 27.7, "out": 31.72, "label": "Rear-End Launch", "emoji": "🚀", "zoom": 1.0, "anchor": 1.0,
+           "why": "Compilation clip 9 — POV blue kart rams the red kart, guy gets thrown out laughing (~3 s in); fahh on the hit" },
+    "3": { "clip": "work/clip1.mp4", "in": 11.8, "out": 14.97, "label": "Jungle Exit", "emoji": "🌴", "zoom": 1.0, "anchor": 1.0,
+           "why": "Compilation clip 4 — out of the tunnel, misses the bend and flies off the track into the bushes, hands up (~1.6 s in); fahh" },
+    "2": { "clip": "work/clip1.mp4", "in": 20.37, "out": 24.28, "label": "Kart Yeeted", "emoji": "🙃", "zoom": 1.0, "anchor": 1.0,
+           "why": "Compilation clip 7 — green kart smashes the yellow one, it flips onto its roof and slides past the camera upside down (~1.9 s in); vine boom" },
+    "1": { "clip": "work/clip1.mp4", "in": 0.05, "out": 6.65, "label": "Full Send Flip", "emoji": "😱", "zoom": 1.0, "anchor": 1.0,
+           "why": "Compilation clip 1 — girl clips the barrier, the kart flips over her (~2.8 s), then the hand-over-mouth reaction; biggest payoff and the full 6.6 s; vine boom" }
   }
 }
