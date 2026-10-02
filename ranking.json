@@ -17,8 +17,8 @@
   "cutAfterLastReveal": true,
   "clipAudio": false,
   "music": {
-    "file": "assets/music/chopin-nocturne-op9-no2.wav",
-    "start": 0.85
+    "file": "assets/music/ranking-bed-extracted.wav",
+    "start": 0
   },
   "sfx": {
     "reveal": "ding",
