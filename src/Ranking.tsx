@@ -53,6 +53,12 @@ const LABEL_SIZE = 46;
 // under 0 dBFS on its own (whoosh peaks -4.5 dB, impact -12 dB, click -4.3 dB). The clip ducks
 // under every transition so the hits punch through; pipeline/render.mjs runs a limiter on the mix.
 const CLIP_VOL = process.env.REMOTION_MUTE_CLIPS ? 0 : 0.95; // env flag lets verify isolate the sfx bus
+// House music bed (Lucas, 2026-10-02: "use it in the background of all our videos from now on") —
+// the instrumental Shazam found under the RankZilla ranking Shorts. Track is -14 LUFS; its last
+// note ends ~137.5 s, so `start` ≈ 137.5 − video length makes the song finish on the hard cut.
+const DEFAULT_MUSIC = { file: "assets/music/pure-imagination.wav" };
+const MUSIC_UNDER_CLIPS = 0.3; // ~-24 LUFS bed under -14 LUFS clip audio
+const MUSIC_FADE_IN = 4; // frames, avoids a click when starting mid-song
 const DUCK_VOL = 0.3;
 const DUCK_IN = 9; // frames to recover after a cut
 const REVEAL_DELAY = 6; // frames after the cut that the label + click land
@@ -222,6 +228,9 @@ export const Ranking: React.FC<{ ranking: RankingT }> = ({ ranking }) => {
   const sfxCfg: RankingT["sfx"] = { reveal: "ding", cut: ["whoosh", "impact"], intro: { sfx: "riser", leadIn: 2.6 }, ...(ranking.sfx ?? {}) };
   const revealSfx = sfxCfg.reveal ?? "ding";
   const cutSfx = sfxCfg.cut ?? ["whoosh", "impact"];
+  const clipVol = ranking.clipAudio === false ? 0 : CLIP_VOL;
+  const music = ranking.music === undefined ? DEFAULT_MUSIC : ranking.music;
+  const musicVol = music?.volume ?? (clipVol === 0 ? 1 : MUSIC_UNDER_CLIPS);
 
   const activeSeg = segments.find((s) => frame >= s.from && frame < s.from + s.durationInFrames) ?? segments[segments.length - 1];
   // label pops 6 frames into the clip; the very first one is pre-advanced so frame 0 reads with sound off
@@ -254,7 +263,7 @@ export const Ranking: React.FC<{ ranking: RankingT }> = ({ ranking }) => {
                   trimBefore={seg.trimBefore}
                   trimAfter={seg.trimAfter}
                   volume={(f) =>
-                    CLIP_VOL *
+                    clipVol *
                     avatarDuck(seg.from + f) *
                     interpolate(f, [0, DUCK_IN, seg.durationInFrames - 4, seg.durationInFrames], [DUCK_VOL, 1, 1, 0.5], {
                       extrapolateLeft: "clamp",
@@ -325,7 +334,18 @@ export const Ranking: React.FC<{ ranking: RankingT }> = ({ ranking }) => {
       >
         {ranking.watermark}
       </div>
-          {/* opener: an extra sound on frame 0, on top of the first reveal ding (retention A/B) */}
+      {/* music bed: one continuous pass of the song, no loops; ducks with the clip under the goat */}
+      {music ? (
+        <Audio
+          src={staticFile(music.file)}
+          trimBefore={Math.round((music.start ?? 0) * fps)}
+          volume={(f) =>
+            musicVol * avatarDuck(f) * interpolate(f, [0, MUSIC_FADE_IN], [0, 1], { extrapolateRight: "clamp" })
+          }
+        />
+      ) : null}
+
+      {/* opener: an extra sound on frame 0, on top of the first reveal ding (retention A/B) */}
       {sfxCfg.opener ? (
         <Sequence from={0} durationInFrames={fps * 3}>
           <Sfx name={sfxCfg.opener} />

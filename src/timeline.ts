@@ -33,8 +33,17 @@ export type SfxConfig = {
   hits?: SfxHit[]; // one-off sounds at a moment inside a slot (the karma landing, the scream)
 };
 
+// Background music bed. Plays straight through from `start` (seconds into the track) — never looped.
+export type MusicConfig = {
+  file: string; // e.g. assets/music/pure-imagination.wav (normalized to -14 LUFS)
+  start?: number; // seconds into the track where the video begins
+  volume?: number; // default 1 when clip audio is muted, MUSIC_UNDER_CLIPS otherwise
+};
+
 export type Ranking = {
   sfx?: SfxConfig;
+  music?: MusicConfig | null; // omitted = the house bed (DEFAULT_MUSIC); null = no music
+  clipAudio?: boolean; // false strips the source clips' own audio (music + SFX only)
   avatar?: { image: string; voice: string; tempo?: number; cues: AvatarCue[] };
   title: { prefix: string; keyword: string; suffix: string; keywordColor: string };
   watermark: string;

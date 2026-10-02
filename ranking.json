@@ -1,34 +1,34 @@
 {
-  "title": { "prefix": "Ranking Best", "keyword": "MARIO KART", "suffix": "Moments", "keywordColor": "#FF3B30" },
+  "title": { "prefix": "Ranking Best", "keyword": "ZIPLINE FAIL", "suffix": "Moments", "keywordColor": "#FFD400" },
   "watermark": "@goatedrank",
   "fps": 30,
   "revealOrder": [5, 4, 3, 2, 1],
   "cutAfterLastReveal": true,
-  "durationRange": [20, 38],
-  "durationNote": "Single compilation (vavashop_01, real-life luge 'Mario Kart' in Da Lat) — every slot is one continuous 3.2–6.6 s shot between two real cuts",
-  "delogo": [{ "x": 8, "y": 1795, "w": 112, "h": 115 }],
+  "clipAudio": false,
+  "music": { "file": "assets/music/pure-imagination.wav", "start": 103.7 },
   "sfx": {
     "reveal": "ding",
     "cut": ["whoosh", "impact"],
     "intro": { "sfx": "riser", "leadIn": 2.6 },
     "opener": "i-got-this",
     "hits": [
-      { "slot": 4, "at": 2.95, "sfx": "fahh" },
-      { "slot": 3, "at": 1.65, "sfx": "fahh" },
-      { "slot": 2, "at": 1.85, "sfx": "vine-boom" },
-      { "slot": 1, "at": 3.0, "sfx": "vine-boom" }
+      { "slot": 4, "at": 6.1, "sfx": "fahh" },
+      { "slot": 3, "at": 2.3, "sfx": "vine-boom" },
+      { "slot": 2, "at": 4.6, "sfx": "fahh" },
+      { "slot": 1, "at": 5.5, "sfx": "vine-boom" }
     ]
   },
   "slots": {
-    "5": { "clip": "work/clip1.mp4", "in": 44.53, "out": 48.78, "label": "Track Slide", "emoji": "🛝", "zoom": 1.0, "anchor": 1.0,
-           "why": "Compilation clip 13 — rider ahead bails out of the green kart and slides down the track on his back (~3.5 s in); small in frame, weakest payoff, opens the list" },
-    "4": { "clip": "work/clip1.mp4", "in": 27.7, "out": 31.72, "label": "Rear-End Launch", "emoji": "🚀", "zoom": 1.0, "anchor": 1.0,
-           "why": "Compilation clip 9 — POV blue kart rams the red kart, guy gets thrown out laughing (~3 s in); fahh on the hit" },
-    "3": { "clip": "work/clip1.mp4", "in": 11.8, "out": 14.97, "label": "Jungle Exit", "emoji": "🌴", "zoom": 1.0, "anchor": 1.0,
-           "why": "Compilation clip 4 — out of the tunnel, misses the bend and flies off the track into the bushes, hands up (~1.6 s in); fahh" },
-    "2": { "clip": "work/clip1.mp4", "in": 20.37, "out": 24.28, "label": "Kart Yeeted", "emoji": "🙃", "zoom": 1.0, "anchor": 1.0,
-           "why": "Compilation clip 7 — green kart smashes the yellow one, it flips onto its roof and slides past the camera upside down (~1.9 s in); vine boom" },
-    "1": { "clip": "work/clip1.mp4", "in": 0.05, "out": 6.65, "label": "Full Send Flip", "emoji": "😱", "zoom": 1.0, "anchor": 1.0,
-           "why": "Compilation clip 1 — girl clips the barrier, the kart flips over her (~2.8 s), then the hand-over-mouth reaction; biggest payoff and the full 6.6 s; vine boom" }
+    "5": { "clip": "work/clip1.mp4", "in": 12.0, "out": 19.0, "label": "Backflip Bail", "emoji": "🤸", "zoom": 1.0, "anchor": 0.0,
+           "delogo": [{ "x": 810, "y": 35, "w": 220, "h": 145 }],
+           "why": "Compilation clip 2 (AFV) — launches off the deck and flips backwards to hang upside down (~4.4 s in); no landing on camera, weakest payoff, opens the list; AFV logo delogo'd" },
+    "4": { "clip": "work/clip1.mp4", "in": 54.9, "out": 61.45, "label": "Head First", "emoji": "🙃", "zoom": 1.0, "anchor": 0.0,
+           "why": "Compilation clip 8 — rides the whole line upside down and ploughs head-first into the grass at the camera (~6.1 s in); fahh" },
+    "3": { "clip": "work/clip1.mp4", "in": 19.85, "out": 26.1, "label": "Tire Launch", "emoji": "🛞", "zoom": 1.0, "anchor": 0.0,
+           "why": "Compilation clip 3 — tire swing flips her and throws her into the grass (~2.3 s in); vine boom" },
+    "2": { "clip": "work/clip1.mp4", "in": 3.5, "out": 10.5, "label": "Puddle Plunge", "emoji": "💦", "zoom": 1.0, "anchor": 0.0,
+           "why": "Compilation clip 1 — moto-gear guy drags through the puddle then drops face-first into it (~4.6 s in), crawls out; fahh" },
+    "1": { "clip": "work/clip1.mp4", "in": 26.4, "out": 33.4, "label": "Grandma vs Tree", "emoji": "🌳", "zoom": 1.0, "anchor": 0.0,
+           "why": "Compilation clip 4 — grandma rides the rope swing straight into a tree trunk (~5.4 s in) — most comment-bait; vine boom" }
   }
 }
