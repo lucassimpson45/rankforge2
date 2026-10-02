@@ -54,9 +54,9 @@ const LABEL_SIZE = 46;
 // under every transition so the hits punch through; pipeline/render.mjs runs a limiter on the mix.
 const CLIP_VOL = process.env.REMOTION_MUTE_CLIPS ? 0 : 0.95; // env flag lets verify isolate the sfx bus
 // House music bed (Lucas, 2026-10-02: "use it in the background of all our videos from now on") —
-// the instrumental Shazam found under the RankZilla ranking Shorts. Track is -14 LUFS; its last
-// note ends ~137.5 s, so `start` ≈ 137.5 − video length makes the song finish on the hard cut.
-const DEFAULT_MUSIC = { file: "assets/music/pure-imagination.wav" };
+// Chopin, Nocturne Op. 9 No. 2 in E-flat (Vadim Chaimovich recording), normalized to -14 LUFS.
+// The piece opens after 0.9 s of silence; `start` in ranking.json picks where the video begins.
+const DEFAULT_MUSIC = { file: "assets/music/chopin-nocturne-op9-no2.wav", start: 0.85 };
 const MUSIC_UNDER_CLIPS = 0.3; // ~-24 LUFS bed under -14 LUFS clip audio
 const MUSIC_FADE_IN = 4; // frames, avoids a click when starting mid-song
 const DUCK_VOL = 0.3;

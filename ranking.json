@@ -1,34 +1,33 @@
 {
-  "title": { "prefix": "Ranking Best", "keyword": "ZIPLINE FAIL", "suffix": "Moments", "keywordColor": "#FFD400" },
+  "title": { "prefix": "Ranking Best", "keyword": "FROZEN STAIR", "suffix": "Moments", "keywordColor": "#2F80FF" },
   "watermark": "@goatedrank",
   "fps": 30,
   "revealOrder": [5, 4, 3, 2, 1],
   "cutAfterLastReveal": true,
-  "clipAudio": false,
-  "music": { "file": "assets/music/pure-imagination.wav", "start": 103.7 },
+  "durationRange": [20, 38],
+  "durationNote": "Single compilation (funnyvideo123456778 doorbell-cam ice falls) — every slot is one continuous 4.2–6.8 s shot between two real cuts",
+  "music": { "file": "assets/music/chopin-nocturne-op9-no2.wav", "start": 0.85 },
   "sfx": {
     "reveal": "ding",
     "cut": ["whoosh", "impact"],
     "intro": { "sfx": "riser", "leadIn": 2.6 },
-    "opener": "i-got-this",
     "hits": [
-      { "slot": 4, "at": 6.1, "sfx": "fahh" },
-      { "slot": 3, "at": 2.3, "sfx": "vine-boom" },
-      { "slot": 2, "at": 4.6, "sfx": "fahh" },
-      { "slot": 1, "at": 5.5, "sfx": "vine-boom" }
+      { "slot": 4, "at": 3.6, "sfx": "vine-boom" },
+      { "slot": 3, "at": 5.65, "sfx": "fahh" },
+      { "slot": 2, "at": 4.1, "sfx": "fahh" },
+      { "slot": 1, "at": 4.71, "sfx": "vine-boom" }
     ]
   },
   "slots": {
-    "5": { "clip": "work/clip1.mp4", "in": 12.0, "out": 19.0, "label": "Backflip Bail", "emoji": "🤸", "zoom": 1.0, "anchor": 0.0,
-           "delogo": [{ "x": 810, "y": 35, "w": 220, "h": 145 }],
-           "why": "Compilation clip 2 (AFV) — launches off the deck and flips backwards to hang upside down (~4.4 s in); no landing on camera, weakest payoff, opens the list; AFV logo delogo'd" },
-    "4": { "clip": "work/clip1.mp4", "in": 54.9, "out": 61.45, "label": "Head First", "emoji": "🙃", "zoom": 1.0, "anchor": 0.0,
-           "why": "Compilation clip 8 — rides the whole line upside down and ploughs head-first into the grass at the camera (~6.1 s in); fahh" },
-    "3": { "clip": "work/clip1.mp4", "in": 19.85, "out": 26.1, "label": "Tire Launch", "emoji": "🛞", "zoom": 1.0, "anchor": 0.0,
-           "why": "Compilation clip 3 — tire swing flips her and throws her into the grass (~2.3 s in); vine boom" },
-    "2": { "clip": "work/clip1.mp4", "in": 3.5, "out": 10.5, "label": "Puddle Plunge", "emoji": "💦", "zoom": 1.0, "anchor": 0.0,
-           "why": "Compilation clip 1 — moto-gear guy drags through the puddle then drops face-first into it (~4.6 s in), crawls out; fahh" },
-    "1": { "clip": "work/clip1.mp4", "in": 26.4, "out": 33.4, "label": "Grandma vs Tree", "emoji": "🌳", "zoom": 1.0, "anchor": 0.0,
-           "why": "Compilation clip 4 — grandma rides the rope swing straight into a tree trunk (~5.4 s in) — most comment-bait; vine boom" }
+    "5": { "clip": "work/clip1.mp4", "in": 24.4, "out": 28.55, "label": "Flip-Flop Slide", "emoji": "🩴", "zoom": 1.365, "anchor": 0.5,
+           "why": "Compilation clip 7 — guy in shorts and slides steps onto the iced stairs and slides down them on his back (~1.8 s in); shortest shot, opens the list; zoom fills the blur padding" },
+    "4": { "clip": "work/clip1.mp4", "in": 41.4, "out": 46.95, "label": "Step Slam", "emoji": "💥", "zoom": 1.0, "anchor": 0.5,
+           "why": "Compilation clip 11 — puffer-jacket guy walks off the porch and his feet go out on the steps (~3.6 s in, loudest thud); vine boom" },
+    "3": { "clip": "work/clip1.mp4", "in": 50.85, "out": 57.6, "label": "Chair Crash", "emoji": "🪑", "zoom": 1.0, "anchor": 0.6,
+           "why": "Compilation clip 13 — clings to the porch post, then skids into the patio chair right at the camera (~5.6 s in); fahh" },
+    "2": { "clip": "work/clip1.mp4", "in": 11.3, "out": 16.1, "label": "Ice Rink Porch", "emoji": "⛸️", "zoom": 1.0, "anchor": 0.62,
+           "why": "Compilation clip 4 — kid wipes out in the background first, then dad slips on the glazed porch (~4.1 s in); fahh" },
+    "1": { "clip": "work/clip1.mp4", "in": 5.25, "out": 11.25, "label": "Rescue Fail", "emoji": "🆘", "zoom": 1.2, "anchor": 0.49,
+           "why": "Compilation clip 3 — girl falls on the walk, the woman who runs out to help goes down too (~4.7 s in) — double fall, most comment-bait; vine boom" }
   }
 }

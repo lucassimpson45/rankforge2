@@ -34,12 +34,13 @@ The instant-karma video (`references/canonical-ranking.json`) is the template. E
    every cut · **vine boom** on the two heaviest landings · **fahh** on the two comedic
    wipeouts · nothing on the fifth. Hit times come from the audio peak inside the window.
 8. **Music bed on every video** (Lucas, 2026-10-02: "use it in the background of all our
-   videos from now on") — `assets/music/pure-imagination.wav` ("In a World of Pure
-   Imagination", Harry Schonberg; the bed under the RankZilla ranking Shorts, found via
-   Shazam). It plays automatically when `ranking.json` has no `music` key; set
-   `"music": { "file": "assets/music/pure-imagination.wav", "start": 137.5 − <video length> }`
-   so the song's last note lands on the hard cut. One pass, never looped. Under clip audio it
-   sits at 0.3; with `"clipAudio": false` (he asks to strip the source audio) it plays at
+   videos from now on") — Chopin, Nocturne Op. 9 No. 2 (`assets/music/chopin-nocturne-op9-no2.wav`,
+   -14 LUFS, piano enters at 0.85 s). Lucas named it; Shazam can't ID the bed under other
+   channels' ranking Shorts (it's buried under SFX/edited), and "Pure Imagination" was a wrong
+   guess he rejected — don't swap the bed without him. It plays automatically when
+   `ranking.json` has no `music` key; write `"music": { "file": …, "start": 0.85 }` explicitly.
+   One pass, never looped. Under clip audio it sits at 0.3; with `"clipAudio": false` (only
+   when he asks to strip the source audio, or the source audio is itself a song) it plays at
    full level. `"music": null` turns it off.
 9. **No goat** unless he says so. No outro. Delete clips after.
 10. Deliver the MP4 with the compact report; list the calls he might flip.
@@ -77,7 +78,9 @@ node --env-file=.env pipeline/voice.mjs
   `ranking.json` — top-level applies to every slot, per-slot overrides. `prep.mjs` runs
   ffmpeg `delogo` on the pre-cut. Measure the box on a full-res frame first.
 - **TikTok ingest falling back to the "mobile API" or "embed" route** returns a copy with
-  TikTok's bouncing watermark. Re-run ingest with `--force` until no route message prints.
+  TikTok's bouncing watermark. Re-run with `--force --cookies-from-browser "chrome:Profile 6"`
+  (the profile actually logged into TikTok — plain `chrome` reads the default profile and some
+  videos then say "requiring login").
 - `npm run finish` deletes `work/raw` and `work/*.mp4` at the end. Lucas asked for this
   (laptop storage) — any re-render after that needs the ingest step again (~40 s).
 - `npm run studio` opens Remotion Studio if a layout tweak needs eyeballing live.
