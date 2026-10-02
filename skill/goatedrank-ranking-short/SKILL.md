@@ -33,15 +33,17 @@ The instant-karma video (`references/canonical-ranking.json`) is the template. E
 7. **SFX**: riser that ends on the first cut · **ding** on every reveal · whoosh+impact on
    every cut · **vine boom** on the two heaviest landings · **fahh** on the two comedic
    wipeouts · nothing on the fifth. Hit times come from the audio peak inside the window.
-8. **Music bed on every video** (Lucas, 2026-10-02: "use it in the background of all our
-   videos from now on") — Chopin, Nocturne Op. 9 No. 2 (`assets/music/chopin-nocturne-op9-no2.wav`,
-   -14 LUFS, piano enters at 0.85 s). Lucas named it; Shazam can't ID the bed under other
-   channels' ranking Shorts (it's buried under SFX/edited), and "Pure Imagination" was a wrong
-   guess he rejected — don't swap the bed without him. It plays automatically when
-   `ranking.json` has no `music` key; write `"music": { "file": …, "start": 0.85 }` explicitly.
-   One pass, never looped. Under clip audio it sits at 0.3; with `"clipAudio": false` (only
-   when he asks to strip the source audio, or the source audio is itself a song) it plays at
-   full level. `"music": null` turns it off.
+8. **Music bed on every video, rotating** (Lucas, 2026-10-02: "shuffle between the two for
+   every single video"). Tracks live in `Audios/` at the project root (served via the
+   `public/Audios` symlink): `qkthr-aphex-twin.wav` ("QKThr", Aphex Twin — the bed under the
+   MrPurifiedWater/RankZilla ranking Shorts; Lucas found it, Shazam only matched it once) and
+   `chopin-nocturne-op9-no2.wav`. **Leave `music` out of a new ranking.json** —
+   `pipeline/music.mjs` (run by `render.mjs`) fills in the track the last committed video
+   didn't use, plus its start offset, so commit after every video or the rotation can't see
+   it. Any file Lucas drops into `Audios/` joins the rotation. One pass, never looped. Under
+   clip audio it sits at 0.3; with `"clipAudio": false` (when he asks to strip the source
+   audio, or the source audio is itself a song) it plays at full level. `"music": null` = off.
+   Say in the report which bed the video got.
 9. **No goat** unless he says so. No outro. Delete clips after.
 10. Deliver the MP4 with the compact report; list the calls he might flip.
 
