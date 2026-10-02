@@ -35,7 +35,7 @@ export type SfxConfig = {
 
 // Background music bed. Plays straight through from `start` (seconds into the track) — never looped.
 export type MusicConfig = {
-  file: string; // e.g. assets/music/pure-imagination.wav (normalized to -14 LUFS)
+  file: string; // e.g. Audios/qkthr-aphex-twin.wav (normalized to -14 LUFS)
   start?: number; // seconds into the track where the video begins
   volume?: number; // default 1 when clip audio is muted, MUSIC_UNDER_CLIPS otherwise
 };

@@ -15,6 +15,9 @@ mkdirSync(dirname(out), { recursive: true });
 
 const run = (cmd, args) => spawnSync(cmd, args, { stdio: "inherit", cwd: ROOT });
 
+let mr = run("node", [join(ROOT, "pipeline", "music.mjs")]);
+if (mr.status !== 0) process.exit(mr.status ?? 1);
+
 console.log("[prep] cutting slot windows");
 let pr = run("node", [join(ROOT, "pipeline", "prep.mjs")]);
 if (pr.status !== 0) process.exit(pr.status ?? 1);

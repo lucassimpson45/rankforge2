@@ -17,7 +17,7 @@
   "cutAfterLastReveal": true,
   "clipAudio": false,
   "music": {
-    "file": "assets/music/ranking-bed-extracted.wav",
+    "file": "Audios/qkthr-aphex-twin.wav",
     "start": 0
   },
   "sfx": {

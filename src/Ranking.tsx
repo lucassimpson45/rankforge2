@@ -53,10 +53,9 @@ const LABEL_SIZE = 46;
 // under 0 dBFS on its own (whoosh peaks -4.5 dB, impact -12 dB, click -4.3 dB). The clip ducks
 // under every transition so the hits punch through; pipeline/render.mjs runs a limiter on the mix.
 const CLIP_VOL = process.env.REMOTION_MUTE_CLIPS ? 0 : 0.95; // env flag lets verify isolate the sfx bus
-// House music bed (Lucas, 2026-10-02: "use it in the background of all our videos from now on") —
-// Chopin, Nocturne Op. 9 No. 2 in E-flat (Vadim Chaimovich recording), normalized to -14 LUFS.
-// The piece opens after 0.9 s of silence; `start` in ranking.json picks where the video begins.
-const DEFAULT_MUSIC = { file: "assets/music/chopin-nocturne-op9-no2.wav", start: 0.85 };
+// Music beds live in Audios/ and rotate per video (pipeline/music.mjs writes ranking.json's
+// `music` before every render). This fallback only applies to a bare Studio preview.
+const DEFAULT_MUSIC = { file: "Audios/chopin-nocturne-op9-no2.wav", start: 0.85 };
 const MUSIC_UNDER_CLIPS = 0.3; // ~-24 LUFS bed under -14 LUFS clip audio
 const MUSIC_FADE_IN = 4; // frames, avoids a click when starting mid-song
 const DUCK_VOL = 0.3;
