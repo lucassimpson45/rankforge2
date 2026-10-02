@@ -33,8 +33,16 @@ The instant-karma video (`references/canonical-ranking.json`) is the template. E
 7. **SFX**: riser that ends on the first cut · **ding** on every reveal · whoosh+impact on
    every cut · **vine boom** on the two heaviest landings · **fahh** on the two comedic
    wipeouts · nothing on the fifth. Hit times come from the audio peak inside the window.
-8. **No goat** unless he says so. No outro. Delete clips after.
-9. Deliver the MP4 with the compact report; list the calls he might flip.
+8. **Music bed on every video** (Lucas, 2026-10-02: "use it in the background of all our
+   videos from now on") — `assets/music/pure-imagination.wav` ("In a World of Pure
+   Imagination", Harry Schonberg; the bed under the RankZilla ranking Shorts, found via
+   Shazam). It plays automatically when `ranking.json` has no `music` key; set
+   `"music": { "file": "assets/music/pure-imagination.wav", "start": 137.5 − <video length> }`
+   so the song's last note lands on the hard cut. One pass, never looped. Under clip audio it
+   sits at 0.3; with `"clipAudio": false` (he asks to strip the source audio) it plays at
+   full level. `"music": null` turns it off.
+9. **No goat** unless he says so. No outro. Delete clips after.
+10. Deliver the MP4 with the compact report; list the calls he might flip.
 
 ## The run
 

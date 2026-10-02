@@ -37,6 +37,11 @@ Field notes
   1920-tall source is sacrificed under the title band (0 = crop the bottom, 1 = crop the
   top, 0.5 = split).
 - `why` is for the report and for Lucas; the renderer ignores it.
+- `music`: `{ file, start, volume? }` — omitted = house bed (Pure Imagination) at 0.3 under
+  clip audio; `null` = no music. `start` ≈ 137.5 − video length (song ends ~137.5 s).
+- `clipAudio: false` strips the source clips' audio; music then defaults to volume 1.
+  SFX hit times can't come from RMS then — place them from 6 fps strips of the payoff.
+- `delogo` also works per slot (`slots.N.delogo`).
 - `keywordColor`: yellow `#FFD400` default; red `#FF3B30` or blue `#2F80FF` also on spec.
 
 Detection output that informs the picks: `work/detection.json` (candidates with
